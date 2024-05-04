@@ -28,3 +28,10 @@ helm upgrade --install argo-ingress ./argo-ingress --values values.yaml
 ```
 
 Browse [ArgoCD](https://argo.paolodenti.dev), wiht `admin`/`<the password from the secret>`
+
+
+## Create the app of apps
+
+```bash
+helm template charts/root-app/ | kubectl apply -f -
+```
