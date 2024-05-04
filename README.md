@@ -2,7 +2,7 @@
 
 ## Prequisites
 
-* [homek8s](https://github.com/paolodenti/homek8s) installed, with external-dns, cert-mananger
+* [homek8s](https://github.com/paolodenti/homek8s) installed, with external-dns, cert-manager
 
 Install instruction from [here](https://www.arthurkoziel.com/setting-up-argocd-with-helm/)
 
