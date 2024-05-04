@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argo-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-home
+spec:
+  tls:
+    - hosts:
+        - argo.{{ .Values.domain }}
+      secretName: argo-ingress-tls
+  rules:
+    - host: "argo.{{ .Values.domain }}"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: argo-cd-argocd-server
+                port:
+                  number: 80
