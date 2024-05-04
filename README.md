@@ -35,3 +35,9 @@ Browse [ArgoCD](https://argo.paolodenti.dev), wiht `admin`/`<the password from t
 ```bash
 helm template charts/root-app/ | kubectl apply -f -
 ```
+
+## Delete the secrets created by the manual helm install
+
+```bash
+kubectl delete secret -l owner=helm,name=argo-cd
+```
