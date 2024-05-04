@@ -8,6 +8,8 @@
 
 Main info extacted from [here](https://www.arthurkoziel.com/setting-up-argocd-with-helm/).
 
+Clone this repo and cd into it.
+
 ```bash
 helm repo add argo-cd https://argoproj.github.io/argo-helm
 helm dep update charts/argo-cd/
@@ -28,6 +30,10 @@ helm upgrade --install argo-ingress ./argo-ingress --values values.yaml
 ```
 
 Browse [ArgoCD](https://argo.paolodenti.dev), wiht `admin`/`<the password from the secret>`
+
+## Add the private repo
+
+in Setting/Repositories, add `git@github.com:paolodenti/myargocd.git`.
 
 
 ## Create the app of apps
